@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-university"></i> Pokémon Bank</h1>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="profile.html">Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login-container container">
+        <div class="showcase">
+            <h1>Bienvenido a Pokémon Bank</h1>
+            <p>Gestiona tus transacciones de forma segura y sencilla.</p>
+        </div>
+
+        <div class="card">
+            <h2>Inicio de Sesión</h2>
+            <form id="loginForm">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="pin">PIN:</label>
+                <input type="password" id="pin" name="pin" maxlength="4" required>
+                <button type="submit" class="button">Ingresar</button>
+            </form>
+            <button onclick="showRegisterForm()" class="button">Registrarse</button>
+            <button onclick="showRecoverPinForm()" class="button">Recuperar PIN</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Pokémon Bank &copy; 2024</p>
+    </footer>
+</body>
+</html>

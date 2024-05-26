@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acciones</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-university"></i> Pokémon Bank</h1>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="profile.html">Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Bienvenido, <span id="accountName">[Nombre del Usuario]</span></h2>
+            <p>Número de cuenta: <span id="accountNumber">[Número de Cuenta]</span></p>
+            <div class="buttons">
+                <button onclick="showTransactionForm('deposit')" class="button">Depositar</button>
+                <button onclick="showTransactionForm('withdraw')" class="button">Retirar</button>
+                <button onclick="checkBalance()" class="button">Consultar Saldo</button>
+                <button onclick="showTransactionForm('pay')" class="button">Pagar Servicios</button>
+                <button onclick="location.href='history.html'" class="button">Historial de Transacciones</button>
+                <button onclick="location.href='summary.html'" class="button">Resumen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="transactionForm" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTransactionForm()">&times;</span>
+            <h2 id="transactionType"></h2>
+            <form id="transactionFormElement">
+                <label for="amount">Monto:</label>
+                <input type="number" id="amount" name="amount" required>
+                <button type="submit" class="button">Confirmar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="balanceDisplay" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBalanceDisplay()">&times;</span>
+            <h2>Saldo Actual</h2>
+            <p id="currentBalance"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Pokémon Bank &copy; 2024</p>
+    </footer>
+</body>
+</html>
